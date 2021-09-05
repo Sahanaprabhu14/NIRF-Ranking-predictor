@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIRF RANK PREDICTOR</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div class="title">
+        <p>
+                <h1>RANK PREDICTOR</h1>
+        </p>
+    </div>
+    <br><br>
+    <p><b>Instructions:</b>
+
+        <p>* Enter the scores(1-100) of each parameter in their respective text fields and check the rank .</p>
+        <p>* The model is trained for predicting the ranks for the year 2020.</p></p>
+    <div class="input">
+        <form action="{{ url_for('predict')}}" method="POST">
+            <div class="rows">
+                 <input  type="number" step="0.01" name="tlr" placeholder="TLR Score out of 100" required="required" >
+            </div class="rows">
+            <div class="rows">
+                <input  type="number" step="0.01" name="rpc" placeholder="RPC Score out of 100" required="required">
+            </div>
+            <div class="rows">
+                <input  type="number" step="0.01" name="go" placeholder="GO Score out of 100" required="required">
+            </div>
+            <div class="rows">
+                <input  type="number" step="0.01" name="oi" placeholder="OI Score out of 100" required="required">
+            </div>
+            <div class="rows">
+                <input  type="number" step="0.01" name="perception" placeholder="PERCEPTION Score out of 100" required="required">
+            </div>
+
+            <div class="rows"><input id="btn"class="button" type="submit" value="Predict" required="required">
+            </div>
+            <h3 style="color: white;" >
+                {{prediction_text}}
+            </h3>
+    
+            
+        </form>
+    </div>
+</body>
+
+</html>
