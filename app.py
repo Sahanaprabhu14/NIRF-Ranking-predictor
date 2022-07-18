@@ -41,12 +41,6 @@ avg_diff = []
 for i in range(0, 100, 10):
     avg_diff.append(math.ceil(sum(diff[i:i+10])/10))
 
-
-
-
-
-
-
 app = Flask(__name__)
 # model_2019 = pickle.load(open('C:/Users/user/Desktop/flask/rank_model_2019.pkl', 'rb'))
 min_max =[ [[91.85,40.86],[94.68,0.68],[88.31,42.07],[82.94,48.05],[84.24,1.46]],
